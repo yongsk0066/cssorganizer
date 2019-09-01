@@ -23,20 +23,38 @@ wholeCss = []
 word = ""
 flag = 0
 count = 0
-
+comment = ""
+index = 0
 for l in oneLine:
+    # class type
     if l == "{":
         wholeCss.append([word])
+        wholeCss[count].append([])
         before = word
         word = ""
         flag = 1
     word += l
-    if l == "}":
-        word = word.replace(" ", "")
-        wholeCss[count].append(word)
+    if l == "/" and oneLine[index + 1] == "*":
+        flag = 2
+    elif l == "/" and oneLine[index - 1] == "*":
+        comment = word.replace(" ","").replace("{","")
+        wholeCss[count][1].append(comment)
+        comment = ""
         word = ""
-        flag = 0
-        count += 1
+        flag = 1
+
+    if flag == 1:
+        if l == ";":
+            word= word.replace(" ", "").replace("{","")
+            wholeCss[count][1].append(word)
+            word=""
+        if l == "}":
+            # word = word.replace(" ", "")
+            # wholeCss[count].append(word)
+            word = ""
+            flag = 0
+            count += 1
+    index += 1
 
 for i in range(0, len(wholeCss)):
     print(wholeCss[i])
