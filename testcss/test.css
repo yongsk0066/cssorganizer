@@ -1,0 +1,59 @@
+* {
+  color: blue;
+}
+
+*.abc  { color: blue; }
+
+.abc { color: blue; }
+
+#abc {
+  color: red;
+}
+
+
+div > blockquote {
+    display: flex;
+    /*hello im comment*/
+}
+
+
+h1 ~ p {
+    color: #ffffff;
+}
+
+h1 + p {
+    width: 100%;
+}
+
+
+p::first-line {
+  color: red;
+}
+
+p::before {
+  content: "xyz";
+  color: red;
+}
+
+li:empty {
+    height: 200px;
+}
+
+p:hover {
+  color: red;
+}
+
+li:nth-child( 5 ) {
+  color: red;
+}
+
+:root {
+    --my-color-1: red;
+}
+.x {
+    color: var( --my-color-1 );
+}
+
+@media ( max-width: 768px ) {
+  body { color: red; }
+}
