@@ -13,7 +13,7 @@
 
 div > blockquote {
     display: flex;
-    /*hello im comment*/
+    /*width: 100%;*/
 }
 
 
@@ -45,6 +45,8 @@ p:hover {
 
 li:nth-child( 5 ) {
   color: red;
+  color: blue;
+
 }
 
 :root {
@@ -55,5 +57,17 @@ li:nth-child( 5 ) {
 }
 
 @media ( max-width: 768px ) {
-  body { color: red; }
+  body {
+      color: red;
+      color: red;
+  }
+  div {
+    width: 100%;
+  }
+}
+:root {
+    --my-color-1: red;
+}
+.x {
+    color: var( --my-color-1 );
 }
