@@ -19,8 +19,6 @@ oneLine = oneLine.replace("\n", "")
 
 # css parsing
 
-
-
 def parseToList(c):
     func_word = ""
     func_list = []
@@ -161,6 +159,8 @@ def returnList(oneLine):
                     count += 1
         index += 1
     return wholeCss
+
+#test code
 
 for i in returnList(oneLine):
     print(i)
