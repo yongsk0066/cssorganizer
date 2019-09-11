@@ -17,6 +17,7 @@ for line in lines:
 
 oneLine = oneLine.replace("\n", "")
 
+
 # css parsing
 
 def parseToList(c):
@@ -27,12 +28,12 @@ def parseToList(c):
         func_word += l
 
         if l == "{":
-            func_word = func_word.replace("{", "").rstrip()
+            func_word = func_word.replace("{", "").strip()
             func_list.append(func_word)
             func_list.append([])
             func_word = ""
         if l == ";":
-            func_word = func_word.replace("{", "").replace(" ", "")
+            func_word = func_word.replace("{", "").strip()
             func_list[1].append(func_word)
             func_word = ""
 
@@ -101,7 +102,7 @@ def returnList(oneLine):
             if l == "{":
                 media_count += 1
                 if media_count == 1:
-                    base = [word.replace("{", "").rstrip()]
+                    base = [word.replace("{", "").strip()]
             if l == "}":
                 media_count -= 1
                 if media_count == 0:
@@ -114,7 +115,7 @@ def returnList(oneLine):
                     word = ""
         else:
             if l == "{":
-                word = word.rstrip().replace(" ", "|").replace("{", "")
+                word = word.strip().replace(" ", "|").replace("{", "")
                 wholeCss.append([word])
                 wholeCss[count].append([])
                 before = word
@@ -148,7 +149,7 @@ def returnList(oneLine):
             if flag == 1 and not comment_flag == 1:
                 # property append
                 if l == ";":
-                    word = word.replace(" ", "").replace("{", "")
+                    word = word.replace("{", "").strip()
                     wholeCss[count][1].append(word)
                     word = ""
 
@@ -160,7 +161,9 @@ def returnList(oneLine):
         index += 1
     return wholeCss
 
-#test code
+
+# test code
+
 
 for i in returnList(oneLine):
     print(i)

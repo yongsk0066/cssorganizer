@@ -1,13 +1,17 @@
 * {
-  color: blue;
+    color: blue;
 }
 
-*.abc  { color: blue; }
+*.abc {
+    color: blue;
+}
 
-.abc { color: blue; }
+.abc {
+    color: blue;
+}
 
 #abc {
-  color: red;
+    color: red;
 }
 
 
@@ -27,12 +31,12 @@ h1 + p {
 
 
 p::first-line {
-  color: red;
+    color: red;
 }
 
 p::before {
-  content: "xyz";
-  color: red;
+    content: "xyz";
+    color: red;
 }
 
 li:empty {
@@ -40,34 +44,38 @@ li:empty {
 }
 
 p:hover {
-  color: red;
+    color: red;
 }
 
 li:nth-child( 5 ) {
-  color: red;
-  color: blue;
+    color: red;
+    color: blue;
 
 }
 
 :root {
     --my-color-1: red;
 }
+
 .x {
-    color: var( --my-color-1 );
+    color: var(--my-color-1);
 }
 
 @media ( max-width: 768px ) {
-  body {
-      color: red;
-      color: red;
-  }
-  div {
-    width: 100%;
-  }
+    body {
+        color: red;
+        color: red;
+    }
+
+    div {
+        width: 100%;
+    }
 }
+
 :root {
     --my-color-1: red;
 }
+
 .x {
-    color: var( --my-color-1 );
+    color: var(--my-color-1);
 }
