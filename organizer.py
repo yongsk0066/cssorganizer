@@ -10,6 +10,7 @@ css_type = {
 }
 
 # css file to one line string
+
 lines = f.readlines()
 oneLine = ""
 for line in lines:
