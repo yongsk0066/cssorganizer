@@ -83,6 +83,7 @@ def getEach(oneLine):
 # print(getEach(test_set))
 # # for i in cssList:
 # #     print(i)
+
 def returnList(oneLine):
     wholeCss = []
     word = ""
